@@ -1,19 +1,54 @@
-
 const express = require('express')
-const cors = require('cors')
-const app = express()
+const path = require('path')
 const mongo = require('mongodb')
-const MongoClient = require('mongodb').MongoClient;
-const url = "mongodb://localhost:27017/";
+const bodyParser = require('body-parser')
+const crypto = require('crypto')
 
-app.set('port', 3000)
+const app = express();
+const db = "mongodb://localhost:27017/bmi"
 
-app.use(express.json())
-app.use(cors())
+app.get('/',function(req,res){
+	res.set({
+		'Access-Control-Allow-Origin' : '*'
+	});
+	return res.redirect('/client/app/index.html');
+}).listen(3000);
 
+console.log("Server listening at : 3000");
+app.use('/client/app', express.static(__dirname + '/client/app'));
+app.use( bodyParser.json() );
+app.use(bodyParser.urlencoded({
+	extended: true
+}));
 
+// Sign-up function 
+app.post('/sign_up' ,function(req,res) {
+	var name = req.body.name;
+	var password = req.body.password;	
 
-app.listen(app.get('port'), function(){
-	console.log('Express server started on http://localhost:' + app.get('port'));
-	console.log(__dirname)
+	var data = {
+		"name":name,
+		"password": password, 
+	}
+	
+	mongo.connect(db , function(error , db){
+		if (error){
+			throw error;
+		}
+		console.log("connected to database successfully")
+		//CREATING A COLLECTION IN MONGODB USING NODE.JS
+		db.collection("users").insertOne(data, (err , collection) => {
+			if(err) throw err;
+			console.log("Record inserted successfully")
+			console.log(collection);
+		})
+	})
+	
+	console.log("DATA is " + JSON.stringify(data) )
+	res.set({
+		'Access-Control-Allow-Origin' : '*'
+	});
+	return res.redirect('/client/app/bmi.html')
+
 })
+

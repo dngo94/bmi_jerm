@@ -7,5 +7,35 @@
 	</head>
 	<body>
 		<a>BMI Calculator</a>
+		<br>
+		<br>
+		<br>
+		<div class="container" >
+			<div class="row">
+				<div class="col-md-3">
+					<!-- Blank DIV -->
+				</div>
+				
+				<div class="col-md-6 main">
+					<!-- Form Tag starts here -->
+					<!-- Action attribute is the route on backend. Method is POST -->
+					<form action="/sign_up" method="post">
+					
+						<h1> Signup form </h1>
+							
+						<input class="box" type="text" name="name" id="name" placeholder="Enter your Name"  required /><br>
+														
+						<input class="box" type="password" name="password" id="password"  placeholder="Enter your Password " required/><br>
+						<br>
+						<input type="submit" id="submitDetails"  name="submitDetails" value="Submit Your Details" /><br>
+					
+					</form>			
+				</div>	
+				<div class="col-md-3">
+					<!-- Blank DIV -->
+				</div>
+				
+			</div>
+		</div>
 	</body>
 </html>
