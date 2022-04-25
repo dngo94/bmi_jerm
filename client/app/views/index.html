@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>BMI Calculator</title>
+	</head>
+	<body>
+		<a>BMI Calculator</a>
+		<br>
+		<br>
+		<br>
+		<div class="container" >
+			<div class="row">
+				<div>
+					<!-- Blank DIV -->
+				</div>
+				
+				<div>
+					<!-- Form Tag starts here -->
+					<!-- Action attribute is the route on backend. Method is POST -->
+					<form action="http://localhost:3000/api/signup" method="post">
+					
+						<h1> Signup form </h1>
+
+						<input class="box" type="firstname" name="firstname" id="firstname"  placeholder="Enter your First Name " required/><br>
+						
+						<input class="box" type="lastname" name="lastname" id="lastname"  placeholder="Enter your Last Name " required/><br>
+							
+						<input class="box" type="username" name="username" id="username" placeholder="Enter your UserName"  required /><br>
+														
+						<input class="box" type="password" name="password" id="password"  placeholder="Enter your Password " required/><br>
+
+						<input class="box" type="email" name="email" id="email"  placeholder="Enter your Email " required/><br>
+
+						<label for="start">Enter DOB</label>
+						
+						<input type="date" id="start" name="dob">
+						<br>
+						<input type="submit" id="submitDetails"  name="submitDetails" value="Submit Your Details" /><br>
+					
+					</form>			
+				</div>	
+				<div>
+					<a href="./login.html">
+						<button>Go to LogIn</button>
+					  </a>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>
