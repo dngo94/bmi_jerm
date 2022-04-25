@@ -57,10 +57,14 @@ db.mongoose
 
 //create a sign up api with hashed password and use jwt to create a token
 app.post("/api/signup", (req, res) => {
-  User.find({
-    //$or:[ {'email': req.body.email}, {'username': req.body.username}]
-    email: req.body.email
-  }).then(user => {
+  User.findOne({
+    // email: req.body.email})
+    $or: [{
+      email: req.body.email
+    }, {
+      username: req.body.username
+    }]
+    }).then(user => {
     if (user) {
       return res.status(400).json({
         message: "User already exists"
