@@ -32,6 +32,9 @@ app.set('views', path.join(__dirname, '../client/app/views'))
 app.engine("hbs", engine({layoutsDir: path.join(__dirname, "../client/app/views/layouts/"), extname: 'hbs'}))
 app.set("view engine", "hbs")
 
+// function to locate css files
+//app.set('public', path.join(__dirname, '../client/app/public'))
+app.use(express.static(path.join(__dirname,'../client/app/public')))
 
 app.use('/', index)
 app.use('/', login)
@@ -90,8 +93,6 @@ db.mongoose
 
 
   //get all BMI records for a user
-  
-  
   app.get("/api/getbmi", (req, res) => {
     //const payload = jwt.verify(req.cookies.token, secret)
     const payload = jwt.verify(req.cookies.token, process.env.JWT_SECRET)
