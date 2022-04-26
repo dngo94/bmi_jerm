@@ -1,6 +1,6 @@
-# **BMI Calculator and Tracker**
+# BMI Calculator and Tracker
 A project practicing front end development using JavaScript, HTML, CSS, and Handlebars.
 
-# Information
+## Information
 
-# Instructions
+## Instructions
