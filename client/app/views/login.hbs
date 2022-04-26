@@ -1,46 +1,23 @@
-<!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>BMI Calculator</title>
-	</head>
-	<body>
-		<a>Log In</a>
-		<br>
-		<br>
-		<br>
-		<div class="container" >
-			<div class="row">
-				<div>
-					<!-- Blank DIV -->
-				</div>
-				
-				<div>
-					<!-- Form Tag starts here -->
-					<!-- Action attribute is the route on backend. Method is POST -->
-					<form action="http://localhost:3000/api/login" method="post">
-					
-						<h1> LogIn form </h1>
+<div class="row justify-content-md-center" style="margin-top: 100px">
+    <div class="col-md-6">
 
-						<input class="box" type="firstname" name="firstname" id="firstname"  placeholder="Enter your First Name " required/><br>
-						
-						<input class="box" type="lastname" name="lastname" id="lastname"  placeholder="Enter your Last Name " required/><br>
-							
-						<input class="box" type="username" name="username" id="username" placeholder="Enter your UserName"  required /><br>
-														
-						<input class="box" type="password" name="password" id="password"  placeholder="Enter your Password " required/><br>
+        {{#if message}}
+            <div class="alert {{messageClass}}" role="alert">
+                {{message}}
+            </div>
+        {{/if}}
 
-						<br>
-						<input type="submit" id="login"  name="login" value="Log In" /><br>
-					
-					</form>			
-				</div>	
-				<div>
-					<!-- <a href="./login.html"> -->
-                        <!-- <button>Go to LogIn</button> -->
-                      <!-- </a> -->
-				</div>		
-			</div>
-		</div>
-	</body>
-</html>
+        <form method="POST" action="/login">
+            <div class="form-group">
+                <label for="usernameInput">Username</label>
+                <input name="username" type="text" class="form-control" id="usernameInput" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter password">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+</div>

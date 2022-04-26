@@ -1,0 +1,28 @@
+<div class="row justify-content-md-center" style="margin-top: 100px">
+    <div class="col-md-6">
+
+        {{#if message}}
+            <div class="alert {{messageClass}}" role="alert">
+                {{message}}
+            </div>
+        {{/if}}
+
+        <form method="POST" action="/createbmi">
+            <div class="form-group">
+                <div>
+                    <h1> BMI Calculator </h1>
+                </div>
+
+                <div>
+                    <input class="box" type="weight" name="weight" id="weight" placeholder="Enter your weight"  required />
+                </div>                            
+
+                <div>
+                    <input class="box" type="height" name="height" id="height"  placeholder="Enter your height " required/>
+                </div>    
+
+                <button type="submit" class="btn btn-primary">Calculate</button>
+
+        </form>
+    </div>
+</div>
