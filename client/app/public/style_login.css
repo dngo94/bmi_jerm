@@ -1,0 +1,18 @@
+body {
+    background: #cee0dc;
+}
+
+button.login_button {
+    margin: auto;
+    padding: 10px 35px;
+    background-color: #efbfc2;
+    color: black;
+    border: none;
+    font-size: 22px;
+    border-radius: 10px;
+    outline: none;
+}
+
+button.login_button:hover {
+    box-shadow: 5px 5px 15px #aaa;
+}
