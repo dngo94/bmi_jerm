@@ -6,25 +6,20 @@ body {
 h1 {
     background: #cee0dc;
     margin: auto;
-    width: 40%;
+    text-align: center;
     padding: 10px;
-    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 50px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
-a.login_button {
-    margin: auto;
-    padding: 10px 35px;
-    background-color: #efbfc2;
-    color: black;
-    border: none;
-    font-size: 22px;
-    border-radius: 10px;
-    /*box-shadow: 15px 15px 20px #a8a8a8;*/
-    outline: none;
+h2 {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 30px;
 }
 
-a.login_button:hover {
-    box-shadow: 5px 5px 15px #aaa;
+h3 {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 30px;
 }
 
 .left-section .form {
@@ -32,27 +27,49 @@ a.login_button:hover {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 50vh;
+    height: 58vh;
     width: 40vw;
     position: absolute;
     bottom: 0px;
     font-size: 35px;
 }
 
-.right-section .form {
-    float: right;
-    margin: 30vh auto;
-    right: 0;
-}
-
-a.signup_button {
+a.login_button {
     position: relative;
-    bottom: -110px;
+    bottom: 20%;
+    left: 6px;
     margin: auto;
     padding: 10px 35px;
     background-color: #efbfc2;
     color: black;
     border: none;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 22px;
+    /* creates round button design */
+    border-radius: 10px;
+    outline: none;
+}
+
+a.login_button:hover {
+    box-shadow: 5px 5px 15px #aaa;
+}
+
+.right-section .form {
+    float: right;
+    margin: 20vh auto;
+    right: 0;
+}
+
+a.signup_button {
+    position: relative;
+    bottom: -65px;
+    left: 120px;
+    margin: auto;
+    padding: 10px 35px;
+    background-color: #efbfc2;
+    color: black;
+    border: none;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
     font-size: 22px;
     border-radius: 10px;
     /*box-shadow: 15px 15px 20px #a8a8a8;*/
