@@ -1,0 +1,26 @@
+<div class="row justify-content-md-center">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Weight</th>
+                <th>Height</th>
+                <th>BMI Value</th>
+                <th>BMI Status</th>
+                <th>Created On</th>
+                <th>Created At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each bmis}}
+                <tr>
+                    <td>{{weight}}</td>
+                    <td>{{height}}</td>
+                    <td>{{bmi_value}}</td>
+                    <td>{{bmi_status}}</td>
+                    <td>{{createdOn}}</td>
+                    <td>{{createdAt}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

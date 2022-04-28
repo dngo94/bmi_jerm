@@ -6,9 +6,7 @@ const BMI = db.bmi
 
 //create a new BMI record for a user
 router.post("/createbmi", (req, res) => {
-    //const payload = jwt.verify(req.cookies.token, secret)
     const payload = jwt.verify(req.cookies.token, process.env.JWT_SECRET)
-    console.log(payload)
 
     const newBMI = new BMI({
       weight: req.body.weight,
@@ -20,7 +18,8 @@ router.post("/createbmi", (req, res) => {
     newBMI
       .save()
       .then(bmi => {
-        res.json({ message: "BMI record created successfully!" })
+        res.render('bmicalculator', { 
+          message: "BMI record created successfully!" })
       })
       .catch(err => {
         console.log(err)
@@ -28,8 +27,9 @@ router.post("/createbmi", (req, res) => {
   })
 
   function bmi_cal(weight, height) {
-    var bmi = weight / (height * height)
-    return bmi
+    var bmi = weight / (height * height) * 10000
+    //round to 2 decimal places
+    return bmi.toFixed(2)
   }
 
   function bmi_status(bmi) {

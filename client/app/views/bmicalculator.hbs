@@ -16,16 +16,51 @@
                 </div>
 
                 <div>
-                    <input class="box" type="weight" name="weight" id="weight" placeholder="Enter your weight"  required />
+                    <input class="box" type="weight" name="weight" id="weight" placeholder="Enter your weight (in kg)"  required />
                 </div>                            
 
                 <div>
-                    <input class="box" type="height" name="height" id="height"  placeholder="Enter your height " required/>
+                    <input class="box" type="height" name="height" id="height"  placeholder="Enter your height (in cm)" required/>
                 </div>    
 
                 <br>
                 <button type="submit" class="button calculate_button">Calculate</button>
-
         </form>
+        <br>
+        <br>
+        <div class="row justify-content-md-center">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                           
+                            <th>Weight</th>
+                            <th>Height</th>
+                            <th>BMI Value</th>
+                            <th>BMI Status</th>
+                            <th>Created On</th>
+                            <th>Created At</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each bmis}}
+                            <tr>
+                                <td>{{weight}}</td>
+                                <td>{{height}}</td>
+                                <td>{{bmi_value}}</td>
+                                <td>{{bmi_status}}</td>
+                                <td>{{createdAt}}</td>
+                                <td>{{createdOn}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            {{!-- display getbmi with button --}}
+            <div class="row justify-content-md-center">
+                <div class="col-md-6">
+                    <a href="/getbmi" class="btn btn-primary">Show BMI History</a>
+                </div>
+            </div>
     </div>
 </div>

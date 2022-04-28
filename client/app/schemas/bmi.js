@@ -6,12 +6,17 @@ const BMI = mongoose.model(
     height: String,
     bmi_value: String,
     bmi_status: String,
+    
     user_id : 
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
       }
     
-  })
+  },
+  {
+    timestamps: true
+  }
+  )
 )
 module.exports = BMI
